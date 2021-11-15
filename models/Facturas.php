@@ -3,7 +3,7 @@
      public function get_facturas(){
          $conectar=parent::conexion();
          parent::set_names();
-         $sql=" SELECT * FROM ma_facturas WHERE estado = 1";
+         $sql=" SELECT * FROM ma_facturas WHERE estado = 1 or 2";
          $sql=$conectar->prepare($sql);
          $sql->execute();
          return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
